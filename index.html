@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đoàn Thị Duyên - Xây dựng thương hiệu số cho bác sĩ Đông - Tây y</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            color: #333;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .gold-accent {
+            color: #D4AF37;
+        }
+        
+        .bg-navy {
+            background-color: #0F172A;
+        }
+        
+        .border-gold {
+            border-color: #D4AF37;
+        }
+        
+        .btn-gold {
+            background-color: #D4AF37;
+            color: white;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-gold:hover {
+            background-color: #B99B2B;
+            transform: translateY(-2px);
+        }
+        
+        .btn-outline-gold {
+            border: 2px solid #D4AF37;
+            color: #D4AF37;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-outline-gold:hover {
+            background-color: #D4AF37;
+            color: white;
+        }
+        
+        .doctor-card {
+            transition: all 0.3s ease;
+        }
+        
+        .doctor-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            border: 2px solid #D4AF37;
+        }
+        
+        .doctor-gallery {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .gallery-container {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+        
+        .gallery-slide {
+            min-width: 100%;
+            position: relative;
+        }
+        
+        .gallery-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(212, 175, 55, 0.9);
+            color: white;
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            z-index: 10;
+        }
+        
+        .gallery-nav:hover {
+            background: rgba(185, 155, 43, 1);
+            transform: translateY(-50%) scale(1.1);
+        }
+        
+        .gallery-nav.prev {
+            left: 15px;
+        }
+        
+        .gallery-nav.next {
+            right: 15px;
+        }
+        
+        .gallery-indicators {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 8px;
+            z-index: 10;
+        }
+        
+        .gallery-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .gallery-dot.active {
+            background: #D4AF37;
+            transform: scale(1.2);
+        }
+    </style>
+</head>
+<body class="bg-white">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm fixed w-full z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <span class="text-xl font-bold text-navy">Đoàn Thị Duyên</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#about" class="text-gray-700 hover:text-gold-accent">Về tôi</a>
+                    <a href="#projects" class="text-gray-700 hover:text-gold-accent">Dự án</a>
+                    <a href="#why" class="text-gray-700 hover:text-gold-accent">Vì sao chọn tôi</a>
+                    <a href="#contact" class="text-gray-700 hover:text-gold-accent">Liên hệ</a>
+                    <a href="#consult" class="btn-gold px-6 py-2 rounded-full font-medium">Đặt lịch tư vấn</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button class="mobile-menu-button">
+                        <i data-feather="menu"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-24 pb-16 md:pt-32 md:pb-24 bg-gradient-to-r from-gray-50 to-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="md:flex items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0" data-aos="fade-right">
+                    <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-6">
+                        Đoàn Thị Duyên – <span class="gold-accent">Người xây dựng thương hiệu số</span> cho bác sĩ Đông – Tây y
+                    </h1>
+                    <p class="text-lg text-gray-600 mb-8">
+                        7 năm đồng hành cùng các chuyên gia y khoa hàng đầu Việt Nam, kiến tạo kênh social chuẩn y đức – hiệu quả – uy tín.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#consult" class="btn-gold px-8 py-3 rounded-full font-medium">Đặt lịch tư vấn chiến lược</a>
+                        <a href="#projects" class="btn-outline-gold px-8 py-3 rounded-full font-medium">Xem dự án tiêu biểu</a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center" data-aos="fade-left">
+                    <div class="relative">
+                        <div class="absolute -inset-4 bg-gradient-to-r from-gold-accent to-transparent rounded-2xl opacity-20"></div>
+                        <img src="http://static.photos/medical/640x360/1" alt="Đoàn Thị Duyên" class="relative rounded-2xl w-full max-w-md shadow-xl">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Hành trình <span class="gold-accent">7 năm</span> kiến tạo thương hiệu y khoa</h2>
+                <div class="w-24 h-1 bg-gold-accent mx-auto"></div>
+            </div>
+            
+            <div class="md:flex items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0" data-aos="fade-right">
+                    <img src="http://static.photos/medical/640x360/2" alt="Đoàn Thị Duyên làm việc" class="rounded-lg shadow-lg w-full">
+                </div>
+                <div class="md:w-1/2 md:pl-12" data-aos="fade-left">
+                    <p class="text-gray-600 mb-6">
+                        Từ những ngày đầu khởi nghiệp với niềm đam mê marketing và y học, tôi đã nhận ra một khoảng trống lớn trong cách các bác sĩ, chuyên gia y tế truyền tải kiến thức đến cộng đồng.
+                    </p>
+                    <p class="text-gray-600 mb-6">
+                        Với 7 năm kinh nghiệm chuyên sâu về social marketing trong lĩnh vực y khoa, tôi tự hào đã đồng hành cùng hơn 20 chuyên gia đầu ngành xây dựng thương hiệu cá nhân mạnh mẽ, kết nối họ với hàng triệu bệnh nhân cần sự giúp đỡ.
+                    </p>
+                    <p class="text-gray-600 mb-6 font-medium">
+                        "Không chỉ dừng lại ở truyền thông, tôi mong muốn thay đổi cách công chúng tiếp cận thông tin y khoa chuẩn mực, cân bằng giữa tính chính xác khoa học và sự nhân văn trong từng nội dung."
+                    </p>
+                    <div class="mt-8">
+                        <div class="flex items-center mb-4">
+                            <div class="feature-icon rounded-full flex items-center justify-center mr-4">
+                                <i data-feather="award" class="text-gold-accent" width="24" height="24"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">7+ năm kinh nghiệm</h4>
+                                <p class="text-gray-600 text-sm">Chuyên sâu social marketing y khoa</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="feature-icon rounded-full flex items-center justify-center mr-4">
+                                <i data-feather="users" class="text-gold-accent" width="24" height="24"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">20+ chuyên gia</h4>
+                                <p class="text-gray-600 text-sm">Đã hợp tác và xây dựng thương hiệu</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="bg-gray-50">
+        <!-- Section Header -->
+        <div class="py-16">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center" data-aos="fade-up">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4">Dự án & <span class="gold-accent">Bác sĩ tiêu biểu</span></h2>
+                    <p class="text-gray-600 max-w-2xl mx-auto">Đồng hành cùng những chuyên gia hàng đầu trong lĩnh vực y tế</p>
+                    <div class="w-24 h-1 bg-gold-accent mx-auto mt-4"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Doctor 1 - Full Page Layout -->
+        <div class="min-h-screen flex items-center py-16 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+                <div class="md:flex items-center" data-aos="fade-up">
+                    <div class="md:w-1/2 mb-10 md:mb-0 md:pr-12">
+                        <div class="relative">
+                            <div class="absolute -inset-4 bg-gradient-to-r from-gold-accent to-transparent rounded-3xl opacity-20"></div>
+                            <div class="doctor-gallery relative rounded-3xl overflow-hidden shadow-2xl">
+                                <div class="gallery-container" id="gallery-1">
+                                    <div class="gallery-slide">
+                                        <img src="http://static.photos/medical/640x360/3" alt="TS. Sản Huyền Thương - Khám bệnh" class="w-full h-full object-cover">
+                                    </div>
+                                    <div class="gallery-slide">
+                                        <img src="http://static.photos/medical/640x360/6" alt="TS. Sản Huyền Thương - Phẫu thuật" class="w-full h-full object-cover">
+                                    </div>
+                                    <div class="gallery-slide">
+                                        <img src="http://static.photos/medical/640x360/7" alt="TS. Sản Huyền Thương - Tư vấn" class="w-full h-full object-cover">
+                                    </div>
+                                    <div class="gallery-slide">
+                                        <img src="http://static.photos/medical/640x360/8" alt="TS. Sản Huyền Thương - Đội ngũ" class="w-full h-full object-cover">
+                                    </div>
+                                </div>
+                                <button class="gallery-nav prev" onclick="changeSlide('gallery-1', -1)">
+                                    <i data-feather="chevron-left" width="20" height="20"></i>
+                                </button>
+                                <button class="gallery-nav next" onclick="changeSlide('gallery-1', 1)">
+                                    <i data-feather="chevron-right" width="20" height="20"></i>
+                                </button>
+                                <div class="gallery-indicators" id="indicators-1">
+                                    <div class="gallery-dot active" onclick="goToSlide('gallery-1', 0)"></div>
+                                    <div class="gallery-dot" onclick="goToSlide('gallery-1', 1)"></div>
+                                    <div class="gallery-dot" onclick="goToSlide('gallery-1', 2)"></div>
+                                    <div class="gallery-dot" onclick="goToSlide('gallery-1', 3)"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="md:w-1/2">
+                        <div class="mb-6">
+                            <span class="inline-block bg-gold-accent text-white px-4 py-2 rounded-full text-sm font-medium mb-4">Chuyên gia 01</span>
+                            <h3 class="text-4xl md:text-5xl font-bold mb-4">TS. Sản Huyền Thương</h3>
+                            <p class="text-xl text-gray-600 mb-6">Phó Giám Đốc Trung Tâm Can Thiệp Bào Thai – Bệnh viện Phụ Sản Hà Nội</p>
+                        </div>
+                        
+                        <div class="mb-8">
+                            <h4 class="text-xl font-bold mb-4 gold-accent">Chuyên môn</h4>
+                            <ul class="space-y-3">
+                                <li class="flex items-start">
+                                    <i data-feather="check-circle" class="text-gold-accent mr-3 mt-1" width="20" height="20"></i>
+                                    <span class="text-gray-700">Điều trị bệnh lý sản phụ khoa, thai bất thường</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i data-feather="check-circle" class="text-gold-accent mr-3 mt-1" width="20" height="20"></i>
+                                    <span class="text-gray-700">Chuyên gia vô sinh hiếm muộn, IVF/IUI</span>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-gradient-to-r from-gold-accent/10 to-transparent p-6 rounded-xl border-l-4 border-gold-accent">
+                            <h4 class="font-bold text-lg mb-3 gold-accent">Thành quả hợp tác với Duyên</h4>
+                            <p class="text-gray-700 text-lg leading-relaxed">Xây dựng series video "Hiểu thai kỳ an toàn" → hơn <strong>3 triệu lượt xem</strong>, tăng gấp đôi số ca IVF thành công nhờ truyền thông minh bạch.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Doctor 2 - Full Page Layout -->
+        <div class="min-h-screen flex items-center py-16 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+                <div class="md:flex items-center" data-aos="fade-up">
+                    <div class="md:w-1/2 md:order-2 mb-10 md:mb-0 md:pl-12">
+                        <div class="relative">
+                            <div class="absolute -inset-4 bg-gradient-to-l from-gold-accent to-transparent rounded-3xl opacity-20"></div>
+                            <div class="doctor-gallery relative rounded-3xl overflow-hidden shadow-2xl">
+                                <div class="gallery-container" id="gallery-2">
+                                    <div class="gallery-slide">
+                                        <img src="http://static.photos/medical/640x360/4" alt="ThS.BS Bùi Duy Hưng - Khám bệnh" class="w-full h-full object-cover">
+                                    </div>
+                                    <div class="gallery-slide">
+                                        <img src="http://static.photos/medical/640x360/9" alt="ThS.BS Bùi Duy Hưng - Phòng khám" class="w-full h-full object-cover">
+                                    </div>
+                                    <div class="gallery-slide">
+                                        <img src="http://static.photos/medical/640x360/10" alt="ThS.BS Bùi Duy Hưng - Tư vấn" class="w-full h-full object-cover">
+                                    </div>
+                                    <div class="gallery-slide">
+                                        <img src="http://static.photos/medical/640x360/11" alt="ThS.BS Bùi Duy Hưng - Thảo luận" class="w-full h-full object-cover">
+                                    </div>
+                                </div>
+                                <button class="gallery-nav prev" onclick="changeSlide('gallery-2', -1)">
+                                    <i data-feather="chevron-left" width="20" height="20"></i>
+                                </button>
+                                <button class="gallery-nav next" onclick="changeSlide('gallery-2', 1)">
+                                    <i data-feather="chevron-right" width="20" height="20"></i>
+                                </button>
+                                <div class="gallery-indicators" id="indicators-2">
+                                    <div class="gallery-dot active" onclick="goToSlide('gallery-2', 0)"></div>
+                                    <div class="gallery-dot" onclick="goToSlide('gallery-2', 1)"></div>
+                                    <div class="gallery-dot" onclick="goToSlide('gallery-2', 2)"></div>
+                                    <div class="gallery-dot" onclick="goToSlide('gallery-2', 3)"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="md:w-1/2 md:order-1">
+                        <div class="mb-6">
+                            <span class="inline-block bg-gold-accent text-white px-4 py-2 rounded-full text-sm font-medium mb-4">Chuyên gia 02</span>
+                            <h3 class="text-4xl md:text-5xl font-bold mb-4">ThS.BS Bùi Duy Hưng</h3>
+                            <p class="text-xl text-gray-600 mb-6">Hệ thống phòng khám Quốc Y Đường</p>
+                        </div>
+                        
+                        <div class="mb-8">
+                            <h4 class="text-xl font-bold mb-4 gold-accent">Chuyên môn</h4>
+                            <ul class="space-y-3">
+                                <li class="flex items-start">
+                                    <i data-feather="check-circle" class="text-gold-accent mr-3 mt-1" width="20" height="20"></i>
+                                    <span class="text-gray-700">Đông y lâm sàng</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i data-feather="check-circle" class="text-gold-accent mr-3 mt-1" width="20" height="20"></i>
+                                    <span class="text-gray-700">Điều trị cá thể hóa theo thể trạng</span>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-gradient-to-l from-gold-accent/10 to-transparent p-6 rounded-xl border-r-4 border-gold-accent">
+                            <h4 class="font-bold text-lg mb-3 gold-accent">Thành quả hợp tác với Duyên</h4>
+                            <p class="text-gray-700 text-lg leading-relaxed">Tạo format "Đông y dễ hiểu mỗi ngày" → kênh TikTok đạt <strong>250K followers</strong> sau 6 tháng.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Doctor 3 - Full Page Layout -->
+        <div class="min-h-screen flex items-center py-16 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+                <div class="md:flex items-center" data-aos="fade-up">
+                    <div class="md:w-1/2 mb-10 md:mb-0 md:pr-12">
+                        <div class="relative">
+                            <div class="absolute -inset-4 bg-gradient-to-r from-gold-accent to-transparent rounded-3xl opacity-20"></div>
+                            <div class="doctor-gallery relative rounded-3xl overflow-hidden shadow-2xl">
+                                <div class="gallery-container" id="gallery-3">
+                                    <div class="gallery-slide">
+                                        <img src="http://static.photos/medical/640x360/5" alt="BS. CKII Phạm Minh Giang - Khám bệnh" class="w-full h-full object-cover">
+                                    </div>
+                                    <div class="gallery-slide">
+                                        <img src="http://static.photos/medical/640x360/12" alt="BS. CKII Phạm Minh Giang - Phẫu thuật" class="w-full h-full object-cover">
+                                    </div>
+                                    <div class="gallery-slide">
+                                        <img src="http://static.photos/medical/640x360/13" alt="BS. CKII Phạm Minh Giang - Livestream" class="w-full h-full object-cover">
+                                    </div>
+                                    <div class="gallery-slide">
+                                        <img src="http://static.photos/medical/640x360/14" alt="BS. CKII Phạm Minh Giang - Hội thảo" class="w-full h-full object-cover">
+                                    </div>
+                                </div>
+                                <button class="gallery-nav prev" onclick="changeSlide('gallery-3', -1)">
+                                    <i data-feather="chevron-left" width="20" height="20"></i>
+                                </button>
+                                <button class="gallery-nav next" onclick="changeSlide('gallery-3', 1)">
+                                    <i data-feather="chevron-right" width="20" height="20"></i>
+                                </button>
+                                <div class="gallery-indicators" id="indicators-3">
+                                    <div class="gallery-dot active" onclick="goToSlide('gallery-3', 0)"></div>
+                                    <div class="gallery-dot" onclick="goToSlide('gallery-3', 1)"></div>
+                                    <div class="gallery-dot" onclick="goToSlide('gallery-3', 2)"></div>
+                                    <div class="gallery-dot" onclick="goToSlide('gallery-3', 3)"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="md:w-1/2">
+                        <div class="mb-6">
+                            <span class="inline-block bg-gold-accent text-white px-4 py-2 rounded-full text-sm font-medium mb-4">Chuyên gia 03</span>
+                            <h3 class="text-4xl md:text-5xl font-bold mb-4">BS. CKII Phạm Minh Giang</h3>
+                            <p class="text-xl text-gray-600 mb-6">Bệnh viện Phụ Sản Trung Ương</p>
+                        </div>
+                        
+                        <div class="mb-8">
+                            <h4 class="text-xl font-bold mb-4 gold-accent">Chuyên môn</h4>
+                            <ul class="space-y-3">
+                                <li class="flex items-start">
+                                    <i data-feather="check-circle" class="text-gold-accent mr-3 mt-1" width="20" height="20"></i>
+                                    <span class="text-gray-700">Sản phụ khoa, thủ thuật sản khoa</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i data-feather="check-circle" class="text-gold-accent mr-3 mt-1" width="20" height="20"></i>
+                                    <span class="text-gray-700">Theo dõi thai kỳ nguy cơ cao</span>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-gradient-to-r from-gold-accent/10 to-transparent p-6 rounded-xl border-l-4 border-gold-accent">
+                            <h4 class="font-bold text-lg mb-3 gold-accent">Thành quả hợp tác với Duyên</h4>
+                            <p class="text-gray-700 text-lg leading-relaxed">Tổ chức livestream "Phòng ngừa biến chứng thai kỳ" → <strong>20K lượt xem</strong> trực tiếp, tăng 40% lượng bệnh nhân đặt lịch online.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- CTA Section -->
+        <div class="py-16 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <a href="#" class="btn-outline-gold px-8 py-3 rounded-full font-medium inline-flex items-center">
+                        Xem thêm dự án
+                        <i data-feather="arrow-right" class="ml-2" width="18" height="18"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Section -->
+    <section id="why" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Vì sao chọn <span class="gold-accent">Đoàn Thị Duyên</span></h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Những lý do hàng đầu để hợp tác xây dựng thương hiệu y khoa</p>
+                <div class="w-24 h-1 bg-gold-accent mx-auto mt-4"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center p-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="feature-icon rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i data-feather="clock" class="text-gold-accent" width="24" height="24"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">7 năm kinh nghiệm</h3>
+                    <p class="text-gray-600">Chuyên sâu social marketing trong lĩnh vực y khoa, hiểu rõ đặc thù ngành</p>
+                </div>
+                
+                <div class="text-center p-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-icon rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i data-feather="shield" class="text-gold-accent" width="24" height="24"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">An toàn pháp lý</h3>
+                    <p class="text-gray-600">Nắm vững quy định quảng cáo y tế, đảm bảo truyền thông đúng chuẩn</p>
+                </div>
+                
+                <div class="text-center p-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="feature-icon rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i data-feather="trending-up" class="text-gold-accent" width="24" height="24"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Tăng trưởng 200%</h3>
+                    <p class="text-gray-600">Kênh social của khách hàng tăng trưởng trung bình sau 6 tháng hợp tác</p>
+                </div>
+                
+                <div class="text-center p-6" data-aos="fade-up" data-aos-delay="400">
+                    <div class="feature-icon rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i data-feather="balance" class="text-gold-accent" width="24" height="24"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Cân bằng Đông - Tây y</h3>
+                    <p class="text-gray-600">Định vị nội dung khoa học nhưng dễ tiếp cận, phù hợp đa dạng đối tượng</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="consult" class="py-16 bg-navy text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="md:flex items-center justify-between">
+                <div class="md:w-1/2 mb-10 md:mb-0" data-aos="fade-right">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6">Biến chuyên môn của bạn thành <span class="gold-accent">thương hiệu uy tín</span></h2>
+                    <p class="text-gray-300 mb-8">
+                        Hãy để tôi giúp bạn kết nối với hàng ngàn bệnh nhân đang cần kiến thức và dịch vụ y tế chất lượng từ bạn.
+                    </p>
+                    <div class="flex items-center space-x-4">
+                        <i data-feather="mail" class="text-gold-accent" width="24" height="24"></i>
+                        <span>doanthiduyenkl1@gmail.com</span>
+                    </div>
+                </div>
+                <div class="md:w-1/2 md:pl-12" data-aos="fade-left">
+                    <form class="bg-white rounded-xl shadow-lg p-8">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-6">Đặt lịch tư vấn miễn phí</h3>
+                        <div class="mb-4">
+                            <label class="block text-gray-700 text-sm font-medium mb-2" for="name">Họ và tên</label>
+                            <input class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold-accent" id="name" type="text" placeholder="Nhập họ tên của bạn">
+                        </div>
+                        <div class="mb-4">
+                            <label class="block text-gray-700 text-sm font-medium mb-2" for="email">Email</label>
+                            <input class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold-accent" id="email" type="email" placeholder="Nhập email của bạn">
+                        </div>
+                        <div class="mb-6">
+                            <label class="block text-gray-700 text-sm font-medium mb-2" for="field">Lĩnh vực chuyên môn</label>
+                            <select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold-accent" id="field">
+                                <option>Chọn lĩnh vực của bạn</option>
+                                <option>Sản phụ khoa</option>
+                                <option>Nam học</option>
+                                <option>Đông y</option>
+                                <option>Dinh dưưỡng</option>
+                                <option>Khác</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn-gold w-full py-3 rounded-lg font-medium">Gửi yêu cầu tư vấn</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Kết nối với <span class="gold-accent">Đoàn Thị Duyên</span></h2>
+                <div class="w-24 h-1 bg-gold-accent mx-auto"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="text-center p-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="feature-icon rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i data-feather="mail" class="text-gold-accent" width="24" height="24"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Email</h3>
+                    <a href="mailto:doanthiduyenkl1@gmail.com" class="text-gray-600 hover:text-gold-accent">doanthiduyenkl1@gmail.com</a>
+                </div>
+                
+                <div class="text-center p-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-icon rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i data-feather="map-pin" class="text-gold-accent" width="24" height="24"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Địa chỉ</h3>
+                    <p class="text-gray-600">Hà Nội, Việt Nam</p>
+                </div>
+                
+                <div class="text-center p-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="feature-icon rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i data-feather="phone" class="text-gold-accent" width="24" height="24"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Hotline/Zalo</h3>
+                    <p class="text-gray-600">[Cập nhật sau]</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="md:flex justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <h3 class="text-xl font-bold">Đoàn Thị Duyên</h3>
+                    <p class="text-gray-400 mt-2">Chuyên gia social marketing y khoa</p>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white">
+                        <i data-feather="facebook" width="20" height="20"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white">
+                        <i data-feather="linkedin" width="20" height="20"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white">
+                        <i data-feather="youtube" width="20" height="20"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400 text-sm">
+                <p>© 2023 Đoàn Thị Duyên. Tất cả quyền được bảo lưu.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+        
+        feather.replace();
+        
+        // Mobile menu toggle
+        const mobileMenuButton = document.querySelector('.mobile-menu-button');
+        const mobileMenu = document.querySelector('.mobile-menu');
+        
+        if (mobileMenuButton && mobileMenu) {
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+        
+        // Gallery functionality
+        const galleries = {};
+        
+        function initGallery(galleryId) {
+            galleries[galleryId] = {
+                currentSlide: 0,
+                totalSlides: document.querySelectorAll(`#${galleryId} .gallery-slide`).length
+            };
+        }
+        
+        function changeSlide(galleryId, direction) {
+            const gallery = galleries[galleryId];
+            const container = document.getElementById(galleryId);
+            const indicators = document.getElementById(`indicators-${galleryId.split('-')[1]}`);
+            
+            gallery.currentSlide += direction;
+            
+            if (gallery.currentSlide >= gallery.totalSlides) {
+                gallery.currentSlide = 0;
+            } else if (gallery.currentSlide < 0) {
+                gallery.currentSlide = gallery.totalSlides - 1;
+            }
+            
+            updateGallery(galleryId, gallery.currentSlide);
+        }
+        
+        function goToSlide(galleryId, slideIndex) {
+            galleries[galleryId].currentSlide = slideIndex;
+            updateGallery(galleryId, slideIndex);
+        }
+        
+        function updateGallery(galleryId, slideIndex) {
+            const container = document.getElementById(galleryId);
+            const indicators = document.getElementById(`indicators-${galleryId.split('-')[1]}`);
+            
+            // Update slide position
+            container.style.transform = `translateX(-${slideIndex * 100}%)`;
+            
+            // Update indicators
+            const dots = indicators.querySelectorAll('.gallery-dot');
+            dots.forEach((dot, index) => {
+                if (index === slideIndex) {
+                    dot.classList.add('active');
+                } else {
+                    dot.classList.remove('active');
+                }
+            });
+        }
+        
+        // Initialize galleries
+        document.addEventListener('DOMContentLoaded', () => {
+            initGallery('gallery-1');
+            initGallery('gallery-2');
+            initGallery('gallery-3');
+            
+            // Auto-advance galleries every 5 seconds
+            setInterval(() => {
+                changeSlide('gallery-1', 1);
+                setTimeout(() => changeSlide('gallery-2', 1), 1000);
+                setTimeout(() => changeSlide('gallery-3', 1), 2000);
+            }, 5000);
+        });
+    </script>
+</body>
+</html>
