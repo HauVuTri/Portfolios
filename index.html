@@ -23,14 +23,28 @@
             --warm-beige: #F8F6F0;
             --deep-navy: #1B2951;
             --accent-copper: #CD853F;
+            
+            /* High contrast text colors */
+            --text-primary: #1F2937;
+            --text-secondary: #374151;
+            --text-tertiary: #4B5563;
+            --text-light: #6B7280;
+            --text-muted: #9CA3AF;
         }
         
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            color: #2D3748;
+            color: var(--text-primary);
             line-height: 1.7;
             background-color: #FEFEFE;
         }
+        
+        /* High contrast utility classes */
+        .text-high-contrast { color: var(--text-primary); }
+        .text-medium-contrast { color: var(--text-secondary); }
+        .text-low-contrast { color: var(--text-tertiary); }
+        .text-light-contrast { color: var(--text-light); }
+        .text-muted-contrast { color: var(--text-muted); }
         
         h1, h2, h3, h4 {
             font-family: 'Noto Serif', 'Crimson Text', serif;
@@ -257,15 +271,15 @@
                         </div>
                         <div>
                             <span class="text-xl font-bold text-gray-800">Đoàn Thị Duyên</span>
-                            <div class="text-xs text-gray-500 font-medium">Strategic Healthcare Communications</div>
+                            <div class="text-xs text-light-contrast font-medium">Strategic Healthcare Communications</div>
                         </div>
                     </div>
                 </div>
                 <div class="hidden md:flex items-center space-x-8">
-                    <a href="#about" class="text-gray-700 hover:text-medical-blue transition-colors font-medium">Chuyên môn</a>
-                    <a href="#projects" class="text-gray-700 hover:text-medical-blue transition-colors font-medium">Đối tác y khoa</a>
-                    <a href="#why" class="text-gray-700 hover:text-medical-blue transition-colors font-medium">Phương pháp</a>
-                    <a href="#contact" class="text-gray-700 hover:text-medical-blue transition-colors font-medium">Liên hệ</a>
+                    <a href="#about" class="text-medium-contrast hover:text-medical-blue transition-colors font-medium">Chuyên môn</a>
+                    <a href="#projects" class="text-medium-contrast hover:text-medical-blue transition-colors font-medium">Đối tác y khoa</a>
+                    <a href="#why" class="text-medium-contrast hover:text-medical-blue transition-colors font-medium">Phương pháp</a>
+                    <a href="#contact" class="text-medium-contrast hover:text-medical-blue transition-colors font-medium">Liên hệ</a>
                     <a href="#consult" class="btn-medical px-6 py-2 rounded-full font-medium">Tư vấn chiến lược</a>
                 </div>
                 <div class="md:hidden flex items-center">
@@ -288,10 +302,10 @@
                     <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-6">
                         Đoàn Thị Duyên – <span class="medical-accent">Chiến lược gia thương hiệu</span> cho bác sĩ Đông – Tây y
                     </h1>
-                    <p class="text-lg text-gray-700 mb-4 leading-relaxed">
+                    <p class="text-lg text-medium-contrast mb-4 leading-relaxed">
                         <strong>7 năm chuyên sâu</strong> phát triển hệ sinh thái truyền thông y khoa, đã đồng hành thành công với <strong>20+ chuyên gia đầu ngành</strong> tại các bệnh viện tuyến đầu Việt Nam.
                     </p>
-                    <p class="text-md text-gray-600 mb-8 leading-relaxed">
+                    <p class="text-md text-low-contrast mb-8 leading-relaxed">
                         Ứng dụng khoa học truyền thông kết hợp hiểu biết sâu sắc về y đức, tạo ra những chiến dịch digital marketing <em>chuẩn mực - hiệu quả - bền vững</em> cho ngành y tế.
                     </p>
                     <div class="flex flex-col sm:flex-row gap-4">
@@ -313,7 +327,7 @@
                                     <div class="medical-icon w-6 h-6 text-xs">
                                         <i class="fas fa-stethoscope"></i>
                                     </div>
-                                    <span class="text-xs font-semibold text-gray-700">Healthcare Expert</span>
+                                    <span class="text-xs font-semibold text-medium-contrast">Healthcare Expert</span>
                                 </div>
                             </div>
                         </div>
@@ -863,31 +877,31 @@
                             <p class="text-blue-200 text-sm">Healthcare Communications Strategist</p>
                         </div>
                     </div>
-                    <p class="text-blue-100 leading-relaxed">
+                    <p class="text-gray-200 leading-relaxed">
                         Chuyên gia truyền thông y khoa với 7+ năm kinh nghiệm, đồng hành cùng các bác sĩ hàng đầu xây dựng thương hiệu số uy tín.
                     </p>
                 </div>
                 
                 <div>
-                    <h4 class="text-lg font-semibold mb-4 text-blue-100">Liên hệ trực tiếp</h4>
+                    <h4 class="text-lg font-semibold mb-4 text-gray-100">Liên hệ trực tiếp</h4>
                     <div class="space-y-3">
                         <div class="flex items-center space-x-3">
                             <i class="fas fa-envelope text-blue-300"></i>
-                            <a href="mailto:doanthiduyenkl1@gmail.com" class="text-blue-100 hover:text-white transition-colors">doanthiduyenkl1@gmail.com</a>
+                            <a href="mailto:doanthiduyenkl1@gmail.com" class="text-gray-200 hover:text-white transition-colors">doanthiduyenkl1@gmail.com</a>
                         </div>
                         <div class="flex items-center space-x-3">
                             <i class="fas fa-phone text-blue-300"></i>
-                            <a href="tel:0397221320" class="text-blue-100 hover:text-white transition-colors">0397 221 320</a>
+                            <a href="tel:0397221320" class="text-gray-200 hover:text-white transition-colors">0397 221 320</a>
                         </div>
                         <div class="flex items-center space-x-3">
                             <i class="fas fa-map-marker-alt text-blue-300"></i>
-                            <span class="text-blue-100">Hà Nội, Việt Nam</span>
+                            <span class="text-gray-200">Hà Nội, Việt Nam</span>
                         </div>
                     </div>
                 </div>
                 
                 <div>
-                    <h4 class="text-lg font-semibold mb-4 text-blue-100">Kết nối mạng xã hội</h4>
+                    <h4 class="text-lg font-semibold mb-4 text-gray-100">Kết nối mạng xã hội</h4>
                     <div class="flex space-x-4">
                         <a href="#" class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center hover:bg-blue-500 transition-colors">
                             <i class="fab fa-facebook-f"></i>
@@ -902,17 +916,17 @@
                             <i class="fab fa-tiktok"></i>
                         </a>
                     </div>
-                    <div class="mt-4 text-sm text-blue-200">
+                    <div class="mt-4 text-sm text-gray-300">
                         <p>Theo dõi để cập nhật kiến thức mới nhất về truyền thông y khoa</p>
                     </div>
                 </div>
             </div>
             
             <div class="border-t border-blue-400/30 pt-8 flex flex-col md:flex-row justify-between items-center">
-                <div class="text-blue-200 text-sm mb-4 md:mb-0">
+                <div class="text-gray-300 text-sm mb-4 md:mb-0">
                     <p>© 2024 Đoàn Thị Duyên Healthcare Communications. Bảo lưu mọi quyền.</p>
                 </div>
-                <div class="flex space-x-6 text-xs text-blue-300">
+                <div class="flex space-x-6 text-xs text-gray-400">
                     <a href="#" class="hover:text-white transition-colors">Chính sách bảo mật</a>
                     <a href="#" class="hover:text-white transition-colors">Điều khoản sử dụng</a>
                     <a href="#" class="hover:text-white transition-colors">Y đức nghề nghiệp</a>
